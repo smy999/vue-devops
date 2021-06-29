@@ -25,7 +25,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@master
 
-    - nmae: Set up Node.js
+    - name: Set up Node.js
       uses: actions/setup-node@master
       with:
         node-version: 14.x
