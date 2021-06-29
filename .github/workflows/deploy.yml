@@ -23,23 +23,23 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout source code
-    uses: actions/checkout@master
+      uses: actions/checkout@master
 
     - nmae: Set up Node.js
-    uses: actions/setup-node@master
-    with:
-    node-version: 14.x
+      uses: actions/setup-node@master
+      with:
+        node-version: 14.x
 
     - name: Install dependencies
-    run: yarn install
+      run: yarn install
 
     - name: Build page
-    run: yarn build
-    env:
-    NODE_ENV: production
+      run: yarn build
+      env:
+        NODE_ENV: production
 
     - name: Deploy to gh-pages
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-    github_token: ${{secrets.GITHUB_TOKEN}}
-    publish_dir: ./dist
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./dist
